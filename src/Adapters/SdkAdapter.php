@@ -6,7 +6,7 @@ use Philcross\Itc\Sdk\Sdk;
 use Philcross\Itc\Models\Product;
 use Philcross\Itc\Models\ProductOverview;
 
-class SdkAdapter
+class SdkAdapter implements AdapterInterface
 {
     /** @var Sdk */
     private $sdk;
@@ -22,10 +22,7 @@ class SdkAdapter
     }
 
     /**
-     * Return an array of ProductOverview objects, from the list of products
-     * returned from the service.
-     *
-     * @return array|ProductOverview[]
+     * {@inheritdoc}
      */
     public function listProducts()
     {
@@ -38,7 +35,10 @@ class SdkAdapter
         );
     }
 
-    public function fetchProduct($id)
+    /**
+     * {@inheritdoc}
+     */
+    public function fetchProduct(string $id)
     {
         $product = $this->sdk->products()->details($id);
 
