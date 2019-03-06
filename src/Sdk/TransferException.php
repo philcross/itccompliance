@@ -4,7 +4,7 @@ namespace Philcross\Itc\Sdk;
 
 use GuzzleHttp\Psr7\Request;
 
-class ClientException extends \Exception
+class TransferException extends \Exception
 {
     /** @var Request */
     private $lastRequest;

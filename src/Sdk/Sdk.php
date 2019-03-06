@@ -32,8 +32,16 @@ class Sdk
     {
         $this->lastRequest = $request;
 
-        $response = $this->client->send($request);
+        try {
+            $response = $this->client->send($request);
 
-        return json_decode((string)$response->getBody(), true);
+            return json_decode((string)$response->getBody(), true);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            throw new ClientException($e->getMessage(), $this->lastRequest);
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+            throw new ServerException($e->getMessage(), $this->lastRequest);
+        } catch (\GuzzleHttp\Exception\TransferException $e) {
+            throw new TransferException($e->getMessage(), $this->lastRequest);
+        }
     }
 }

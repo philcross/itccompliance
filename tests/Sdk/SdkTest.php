@@ -3,11 +3,15 @@
 namespace Philcross\Itc\Tests\Sdk;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 use Philcross\Itc\Sdk\Sdk;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Handler\MockHandler;
+use Philcross\Itc\Sdk\ClientException;
+use Philcross\Itc\Sdk\ServerException;
+use Philcross\Itc\Sdk\TransferException;
 
 class SdkTest extends TestCase
 {
@@ -39,6 +43,45 @@ class SdkTest extends TestCase
 
         $this->assertEquals('GET', $sdk->getLastRequest()->getMethod());
         $this->assertEquals('info?id=smart', $sdk->getLastRequest()->getUri());
+    }
+
+    /** @test */
+    public function it_throws_a_client_exception_if_the_service_returns_a_4xx_error()
+    {
+        $request  = new Request('GET', 'invalid');
+        $response = new \GuzzleHttp\Exception\ClientException('client exception thrown', $request);
+
+        $this->expectException(ClientException::class);
+
+        $sdk = $this->getSdk($response);
+
+        $sdk->call($request);
+    }
+
+    /** @test */
+    public function it_throws_a_server_exception_if_the_service_returns_a_5xx_error()
+    {
+        $request  = new Request('GET', 'invalid');
+        $response = new \GuzzleHttp\Exception\ServerException('server exception thrown', $request);
+
+        $this->expectException(ServerException::class);
+
+        $sdk = $this->getSdk($response);
+
+        $sdk->call($request);
+    }
+
+    /** @test */
+    public function it_throws_a_transfer_exception_if_there_was_an_error_during_transfer()
+    {
+        $request  = new Request('GET', 'invalid');
+        $response = new \GuzzleHttp\Exception\RequestException('transfer exception thrown', $request);
+
+        $this->expectException(TransferException::class);
+
+        $sdk = $this->getSdk($response);
+
+        $sdk->call($request);
     }
 
     private function getSdk($response)
