@@ -4,6 +4,11 @@ namespace Philcross\Itc\Traits;
 
 trait SanitizesValues
 {
+    /**
+     * @param null|string $value
+     *
+     * @return null|string
+     */
     protected function sanitizeString(?string $value)
     {
         if (!$value) {

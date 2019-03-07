@@ -51,4 +51,14 @@ class ProductOverview
     {
         return $this->id;
     }
+
+    /**
+     * Return the name of the product
+     *
+     * @return string
+     */
+    public function name()
+    {
+        return $this->name;
+    }
 }
