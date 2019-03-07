@@ -21,4 +21,30 @@ class ProductOverview
         $this->id   = $id;
         $this->name = $name;
     }
+
+    /**
+     * Return an array of ProductOverview instances from a service response.
+     *
+     * @param array $list
+     *
+     * @return array|ProductOverview[]
+     */
+    public static function fromResponse(array $list)
+    {
+        $products = $list['products'];
+
+        return array_map(function ($id, $name) {
+            return new static($id, $name);
+        }, array_keys($products), $products);
+    }
+
+    /**
+     * Return the product ID
+     *
+     * @return string
+     */
+    public function id()
+    {
+        return $this->id;
+    }
 }

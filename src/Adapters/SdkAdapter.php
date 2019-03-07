@@ -28,11 +28,7 @@ class SdkAdapter implements AdapterInterface
     {
         $products = $this->sdk->products()->list();
 
-        return array_map(
-            [$this, 'mapToProductOverview'],
-            array_keys($products['products']),
-            $products['products']
-        );
+        return ProductOverview::fromResponse($products);
     }
 
     /**
@@ -42,23 +38,6 @@ class SdkAdapter implements AdapterInterface
     {
         $product = $this->sdk->products()->details($id);
 
-        return new Product(
-            $id,
-            $product[$id]['name'],
-            $product[$id]['description'],
-            $product[$id]['type'],
-            $product[$id]['suppliers']
-        );
-    }
-
-    /**
-     * @param string $id
-     * @param string $name
-     *
-     * @return ProductOverview
-     */
-    private function mapToProductOverview($id, $name)
-    {
-        return new ProductOverview($id, $name);
+        return Product::fromResponse($id, $product[$id]);
     }
 }
