@@ -2,8 +2,12 @@
 
 namespace Philcross\Itc\Models;
 
+use Philcross\Itc\Traits\SanitizesValues;
+
 class Product
 {
+    use SanitizesValues;
+
     /** @var string */
     private $id;
 
@@ -21,11 +25,11 @@ class Product
 
     public function __construct($id, $name, $description, $type, array $suppliers)
     {
-        $this->id          = $id;
-        $this->name        = $name;
-        $this->description = $description;
-        $this->type        = $type;
-        $this->suppliers   = $suppliers;
+        $this->id          = $this->sanitizeString($id);
+        $this->name        = $this->sanitizeString($name);
+        $this->description = $this->sanitizeString($description);
+        $this->type        = $this->sanitizeString($type);
+        $this->suppliers   = $this->sanitizeArray($suppliers);
     }
 
     /**

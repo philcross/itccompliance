@@ -2,8 +2,8 @@
 
 namespace Philcross\Itc\Tests\Models;
 
-use Philcross\Itc\Models\Product;
 use PHPUnit\Framework\TestCase;
+use Philcross\Itc\Models\Product;
 
 class ProductTest extends TestCase
 {
@@ -54,5 +54,26 @@ class ProductTest extends TestCase
         $this->assertEquals('This is the test description', $product->description());
         $this->assertEquals(null, $product->type());
         $this->assertEquals([], $product->suppliers());
+    }
+
+    /** @test */
+    public function it_can_clean_product_values()
+    {
+        $product = Product::fromResponse('test_id', [
+            'name'        => 'Test Product',
+            'description' => '"This is the test description"',
+            'type'        => 'motor',
+            'suppliers'   => [
+                'test <span style="display: none">1234567890</div>supplier',
+                '"quoted supplier"'
+            ]
+        ]);
+
+        $this->assertInstanceOf(Product::class, $product);
+        $this->assertEquals('test_id', $product->id());
+        $this->assertEquals('Test Product', $product->name());
+        $this->assertEquals('This is the test description', $product->description());
+        $this->assertEquals('motor', $product->type());
+        $this->assertEquals(['test supplier', 'quoted supplier'], $product->suppliers());
     }
 }
