@@ -18,6 +18,8 @@ trait SanitizesValues
         // Remove HTML tags, and the content within it
         $value = preg_replace('/<[^>]*>[^<]*<[^>]*>/im', '', $value);
 
+        $value = preg_replace('/[\x00-\x1F\x7F]/u', '', $value);
+
         // Trim undesirable characters from the start and end of values
         $value = trim($value, ' "\'');
 

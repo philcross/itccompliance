@@ -65,7 +65,7 @@ class ProductTest extends TestCase
             'type'        => 'motor',
             'suppliers'   => [
                 'test <span style="display: none">1234567890</div>supplier',
-                '"quoted supplier"'
+                "\x00\"quoted supplier\"\x01"
             ]
         ]);
 
