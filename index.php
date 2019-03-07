@@ -1,10 +1,10 @@
 <?php
 
-use Philcross\Itc\Http\Controller;
+use Philcross\Itc\Http\EntryController;
 
 include __DIR__ . '/vendor/autoload.php';
 
-$controller = new Controller;
+$controller = new EntryController;
 
 $controller->index();
 exit;
