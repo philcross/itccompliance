@@ -4,7 +4,7 @@ namespace Philcross\Itc\Transformers;
 
 use Philcross\Itc\Models\Product;
 
-class ProductTransformer
+class ProductTransformer extends AbstractTransformer
 {
     /** @var Product */
     private $product;
@@ -24,7 +24,7 @@ class ProductTransformer
      *
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'id'          => $this->product->id(),
@@ -33,15 +33,5 @@ class ProductTransformer
             'type'        => $this->product->type(),
             'suppliers'   => $this->product->suppliers(),
         ];
-    }
-
-    /**
-     * Convert the product to a json string
-     *
-     * @return string
-     */
-    public function toJson()
-    {
-        return json_encode($this->toArray());
     }
 }

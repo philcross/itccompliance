@@ -4,7 +4,7 @@ namespace Philcross\Itc\Transformers;
 
 use Philcross\Itc\Models\ProductOverview;
 
-class ProductOverviewTransformer
+class ProductOverviewTransformer extends AbstractTransformer
 {
     /** @var ProductOverview */
     private $overview;
@@ -24,21 +24,11 @@ class ProductOverviewTransformer
      *
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'id'          => $this->overview->id(),
             'name'        => $this->overview->name(),
         ];
-    }
-
-    /**
-     * Convert the product to a json string
-     *
-     * @return string
-     */
-    public function toJson()
-    {
-        return json_encode($this->toArray());
     }
 }
