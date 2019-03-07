@@ -14,4 +14,9 @@ class ResponseFactory
             json_encode($content)
         );
     }
+
+    public static function text($content = '', int $status = 200)
+    {
+        return new Response($status, ['Content-Type' => 'text/html'], $content);
+    }
 }
