@@ -84,6 +84,19 @@ class SdkTest extends TestCase
         $sdk->call($request);
     }
 
+    /** @test */
+    public function it_throws_a_server_exception_if_given_a_200_response_with_an_error_payload()
+    {
+        $errorPayload = ['error' => 'Data source error, please try again'];
+
+        $response = new Response(200, ['Content-type' => 'application/json'], json_encode($errorPayload));
+
+        $this->expectException(ServerException::class);
+
+        $sdk = $this->getSdk($response);
+        $sdk->products()->details('invalid');
+    }
+
     private function getSdk($response)
     {
         $mock = new MockHandler([$response]);

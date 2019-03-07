@@ -35,7 +35,13 @@ class Sdk
         try {
             $response = $this->client->send($request);
 
-            return json_decode((string)$response->getBody(), true);
+            $content = json_decode((string)$response->getBody(), true);
+
+            if (array_key_exists('error', $content)) {
+                throw new \GuzzleHttp\Exception\ServerException($content['error'], $request, $response);
+            }
+
+            return $content;
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             throw new ClientException($e->getMessage(), $this->lastRequest);
         } catch (\GuzzleHttp\Exception\ServerException $e) {

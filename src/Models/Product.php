@@ -40,10 +40,50 @@ class Product
     {
         return new static(
             $id,
-            $product['name'],
-            $product['description'],
-            $product['type'],
-            $product['suppliers']
+            array_key_exists('name', $product) ? $product['name'] : null,
+            array_key_exists('description', $product) ? $product['description'] : null,
+            array_key_exists('type', $product) ? $product['type'] : null,
+            array_key_exists('suppliers', $product) ? $product['suppliers'] : []
         );
+    }
+
+    /**
+     * @return string
+     */
+    public function id()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function name()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function description()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return string
+     */
+    public function type()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return array
+     */
+    public function suppliers()
+    {
+        return $this->suppliers;
     }
 }
