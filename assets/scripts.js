@@ -45,11 +45,11 @@ var App = function (tableBuilder) {
     var openModal = function (id) {
         app.getModal().style.display = "block";
 
-        tableBuilder.updateCellContent('.product-details-table [rel="id"]', this.products[id]['id']);
-        tableBuilder.updateCellContent('.product-details-table [rel="name"]', this.products[id]['name']);
-        tableBuilder.updateCellContent('.product-details-table [rel="description"]', this.products[id]['description']);
-        tableBuilder.updateCellContent('.product-details-table [rel="type"]', this.products[id]['type']);
-        tableBuilder.updateCellContentWithList('.product-details-table [rel="suppliers"]', this.products[id]['suppliers']);
+        tableBuilder.updateCellContent('.product-details-table [rel="id"]', this.products[id]['id'], 'Unknown');
+        tableBuilder.updateCellContent('.product-details-table [rel="name"]', this.products[id]['name'], 'Unknown');
+        tableBuilder.updateCellContent('.product-details-table [rel="description"]', this.products[id]['description'], 'Unknown');
+        tableBuilder.updateCellContent('.product-details-table [rel="type"]', this.products[id]['type'], 'Unknown');
+        tableBuilder.updateCellContentWithList('.product-details-table [rel="suppliers"]', this.products[id]['suppliers'], 'No known suppliers');
     };
 
     var closeModal = function () {
@@ -94,29 +94,52 @@ var TableBuilder = function () {
             cell.appendChild(link);
         },
 
-        updateCellContent: function (selector, content) {
+        updateCellContent: function (selector, content, defaultContent) {
+            var span;
             var node = document.querySelector(selector);
 
             node.innerHTML = '';
 
-            node.appendChild(document.createTextNode(content));
+            if (!content) {
+                span = document.createElement('span');
+                span.setAttribute('class', 'unknown');
+                span.appendChild(document.createTextNode(defaultContent));
+
+                content = span;
+            } else {
+                content = document.createTextNode(content);
+            }
+
+            node.appendChild(content);
         },
 
-        updateCellContentWithList: function (selector, content) {
-            var x;
+        updateCellContentWithList: function (selector, content, defaultContent) {
+            var x, span;
             var listNode = document.createElement('ul');
 
-            for (x in content) {
-                var itemNode = document.createElement('li');
+            if (!content || content.length === 0) {
+                span = document.createElement('span');
+                span.setAttribute('class', 'unknown');
+                span.appendChild(document.createTextNode(defaultContent));
 
-                itemNode.appendChild(document.createTextNode(content[x]));
-                listNode.appendChild(itemNode);
+                content = span;
+            } else {
+                var listNode = document.createElement('ul');
+
+                for (x in content) {
+                    var itemNode = document.createElement('li');
+
+                    itemNode.appendChild(document.createTextNode(content[x]));
+                    listNode.appendChild(itemNode);
+                }
+
+                content = listNode;
             }
 
             var cell = document.querySelector(selector);
 
             cell.innerHTML = '';
-            cell.appendChild(listNode);
+            cell.appendChild(content);
         }
     }
 };
