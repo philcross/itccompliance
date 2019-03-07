@@ -1,0 +1,137 @@
+html, body {
+    background-color: #eeeeee;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    background-color: #ffffff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.card .header {
+    background-color: #716aca;
+    padding: 15px;
+}
+
+.card .header h1 {
+    margin: 0px;
+    padding: 0px;
+    color: #efeeff;
+}
+
+.card .body {
+    padding: 15px;
+}
+
+table.product-table,
+table.product-details-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+table.loading {
+    display: none;
+}
+
+table.product-table thead tr th,
+table.product-details-table thead tr th {
+    border-top: 0;
+    padding: .75rem;
+}
+
+table.product-table thead tr th {
+    border-bottom: 1px solid #5867dd;
+    vertical-align: bottom;
+    text-align: left;
+}
+
+table.product-details-table tr th {
+    border-right: 1px solid #5867dd;
+    border-top: 1px solid #f4f5f8;
+    background-color: #eeeeee;
+    vertical-align: middle;
+    text-align: right;
+    width: 25%;
+    padding: 0.75rem;
+}
+
+table.product-table tbody td,
+table.product-details-table tbody td {
+    padding: .75rem;
+    border-top: 1px solid #f4f5f8;
+    vertical-align: middle;
+}
+
+table.product-details-table tbody td {
+    text-align: left;
+}
+
+div.loader {
+    width: 100%;
+    text-align: center;
+}
+
+div.loader.loaded {
+    display: none;
+}
+
+a {
+    color: #716aca;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+a:hover {
+    color: #5f57c3;
+    border-bottom: 1px solid #5f57c3;
+    margin-bottom: -1px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
