@@ -26,6 +26,11 @@ trait SanitizesValues
         return $value;
     }
 
+    /**
+     * @param array|null $values
+     *
+     * @return array|null
+     */
     protected function sanitizeArray(?array $values)
     {
         if (!$values) {

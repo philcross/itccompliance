@@ -12,15 +12,20 @@ class AjaxController extends AbstractController
 {
     const API_ENDPOINT = 'https://www.itccompliance.co.uk/recruitment-webservice/api/';
 
+    /**
+     * Retrieve the product detail results, and return them as a JSON array
+     *
+     * @return void
+     */
     public function index()
     {
-        $client = new Client([
+        $client     = new Client([
             'base_uri'    => self::API_ENDPOINT,
             'verify'      => false,
             'http_errors' => true,
         ]);
-        $sdk    = new Sdk($client);
-        $adapter = new SdkAdapter($sdk);
+        $sdk        = new Sdk($client);
+        $adapter    = new SdkAdapter($sdk);
         $repository = new ServicesRepository($adapter);
 
         $transformer = new ProductCollectionTransformer($repository->fetchAllProducts());

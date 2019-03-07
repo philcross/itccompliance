@@ -31,6 +31,13 @@ class ProductCollectionTransformer extends AbstractTransformer
         }, $this->products);
     }
 
+    /**
+     * Ensure each item is an instance of Product
+     *
+     * @param mixed $product
+     *
+     * @return bool
+     */
     private function isProductInstance($product)
     {
         return $product instanceof Product;

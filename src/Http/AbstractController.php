@@ -6,6 +6,13 @@ use Psr\Http\Message\ResponseInterface;
 
 abstract class AbstractController
 {
+    /**
+     * Output the response back to the browser.
+     *
+     * @param ResponseInterface $response
+     *
+     * @return void
+     */
     public function send(ResponseInterface $response)
     {
         $this->sendHeaders($response);
@@ -14,6 +21,13 @@ abstract class AbstractController
         exit;
     }
 
+    /**
+     * Output headers to the browser
+     *
+     * @param ResponseInterface $response
+     *
+     * @return void
+     */
     private function sendHeaders(ResponseInterface $response)
     {
         // headers

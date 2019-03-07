@@ -4,11 +4,11 @@ namespace Philcross\ItcCompliance\Tests\Sdk;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
-use Philcross\ItcCompliance\Sdk\Sdk;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Handler\MockHandler;
+use Philcross\ItcCompliance\Sdk\Sdk;
 use Philcross\ItcCompliance\Sdk\ClientException;
 use Philcross\ItcCompliance\Sdk\ServerException;
 use Philcross\ItcCompliance\Sdk\TransferException;

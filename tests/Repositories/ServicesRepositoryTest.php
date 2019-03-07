@@ -3,9 +3,9 @@
 namespace Philcross\ItcCompliance\Tests\Repositories;
 
 use GuzzleHttp\Psr7\Request;
-use Philcross\ItcCompliance\Sdk\ClientException;
 use PHPUnit\Framework\TestCase;
 use Philcross\ItcCompliance\Models\Product;
+use Philcross\ItcCompliance\Sdk\ClientException;
 use Philcross\ItcCompliance\Models\ProductOverview;
 use Philcross\ItcCompliance\Adapters\AdapterInterface;
 use Philcross\ItcCompliance\Repositories\ServicesRepository;

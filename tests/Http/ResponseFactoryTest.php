@@ -3,8 +3,8 @@
 namespace Philcross\ItcCompliance\Tests\Http;
 
 use PHPUnit\Framework\TestCase;
-use Philcross\ItcCompliance\Http\ResponseFactory;
 use Psr\Http\Message\ResponseInterface;
+use Philcross\ItcCompliance\Http\ResponseFactory;
 
 class ResponseFactoryTest extends TestCase
 {

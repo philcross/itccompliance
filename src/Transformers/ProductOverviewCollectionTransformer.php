@@ -31,6 +31,13 @@ class ProductOverviewCollectionTransformer extends AbstractTransformer
         }, $this->overviews);
     }
 
+    /**
+     * Ensure each item is an instance of ProductOverview
+     *
+     * @param mixed $product
+     *
+     * @return bool
+     */
     private function isProductOverviewInstance($product)
     {
         return $product instanceof ProductOverview;

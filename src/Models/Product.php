@@ -23,6 +23,15 @@ class Product
     /** @var array */
     private $suppliers;
 
+    /**
+     * Constructor
+     *
+     * @param string|null $id
+     * @param string|null $name
+     * @param string|null $description
+     * @param string|null $type
+     * @param array|null $suppliers
+     */
     public function __construct($id, $name, $description, $type, array $suppliers)
     {
         $this->id          = $this->sanitizeString($id);
@@ -52,7 +61,7 @@ class Product
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function id()
     {
@@ -60,7 +69,7 @@ class Product
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function name()
     {
@@ -68,7 +77,7 @@ class Product
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function description()
     {
@@ -76,7 +85,7 @@ class Product
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function type()
     {
@@ -84,7 +93,7 @@ class Product
     }
 
     /**
-     * @return array
+     * @return array|null
      */
     public function suppliers()
     {
