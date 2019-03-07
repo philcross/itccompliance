@@ -30,6 +30,8 @@ This will allow you to quickly create a new adapter, and ensure it's compatible 
 - Tests are located in the `tests/` directory, all the source files for the application are in `src/`, and frontend assets (excluding the view file)
 are stored in `assets/`. The main HTML index page is stored in `src/Views`. In a real life situation, I'd have used some kind of templating engine like Blade or Twig.
 
+- While I've displayed the details in a modal, and the overview in a table, all the data is retrieved in one go - as requested in the documentation. You can go to `/products.php` to view the raw JSON payload for all products.
+
 ### Running the tests
 
 You can run all the unit tests by running `./vendor/bin/phpunit`
@@ -38,3 +40,14 @@ You can run all the unit tests by running `./vendor/bin/phpunit`
 
 You can run the application using the built in PHP server. `php -S localhost:8000`
 It requires PHP >= 7.1
+
+
+### Screenshots
+
+Product list
+
+<img src="https://github.com/philcross/itccompliance/blob/master/assets/screenshot1.png">
+
+Product Details
+
+<img src="https://github.com/philcross/itccompliance/blob/master/assets/screenshot2.png">
