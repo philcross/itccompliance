@@ -1,11 +1,11 @@
 <?php
 
-namespace Philcross\Itc\Tests\Adapters;
+namespace Philcross\ItcCompliance\Tests\Adapters;
 
 use PHPUnit\Framework\TestCase;
-use Philcross\Itc\Models\Product;
-use Philcross\Itc\Models\ProductOverview;
-use Philcross\Itc\Adapters\AdapterInterface;
+use Philcross\ItcCompliance\Models\Product;
+use Philcross\ItcCompliance\Models\ProductOverview;
+use Philcross\ItcCompliance\Adapters\AdapterInterface;
 
 abstract class AbstractAdapterTest extends TestCase
 {

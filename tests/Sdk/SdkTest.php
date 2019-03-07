@@ -1,17 +1,17 @@
 <?php
 
-namespace Philcross\Itc\Tests\Sdk;
+namespace Philcross\ItcCompliance\Tests\Sdk;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
-use Philcross\Itc\Sdk\Sdk;
+use Philcross\ItcCompliance\Sdk\Sdk;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Handler\MockHandler;
-use Philcross\Itc\Sdk\ClientException;
-use Philcross\Itc\Sdk\ServerException;
-use Philcross\Itc\Sdk\TransferException;
+use Philcross\ItcCompliance\Sdk\ClientException;
+use Philcross\ItcCompliance\Sdk\ServerException;
+use Philcross\ItcCompliance\Sdk\TransferException;
 
 class SdkTest extends TestCase
 {

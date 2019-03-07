@@ -1,6 +1,6 @@
 <?php
 
-namespace Philcross\Itc\Traits;
+namespace Philcross\ItcCompliance\Traits;
 
 trait SanitizesValues
 {

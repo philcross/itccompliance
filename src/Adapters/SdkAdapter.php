@@ -1,10 +1,10 @@
 <?php
 
-namespace Philcross\Itc\Adapters;
+namespace Philcross\ItcCompliance\Adapters;
 
-use Philcross\Itc\Sdk\Sdk;
-use Philcross\Itc\Models\Product;
-use Philcross\Itc\Models\ProductOverview;
+use Philcross\ItcCompliance\Sdk\Sdk;
+use Philcross\ItcCompliance\Models\Product;
+use Philcross\ItcCompliance\Models\ProductOverview;
 
 class SdkAdapter implements AdapterInterface
 {

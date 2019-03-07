@@ -1,14 +1,14 @@
 <?php
 
-namespace Philcross\Itc\Tests\Repositories;
+namespace Philcross\ItcCompliance\Tests\Repositories;
 
 use GuzzleHttp\Psr7\Request;
-use Philcross\Itc\Sdk\ClientException;
+use Philcross\ItcCompliance\Sdk\ClientException;
 use PHPUnit\Framework\TestCase;
-use Philcross\Itc\Models\Product;
-use Philcross\Itc\Models\ProductOverview;
-use Philcross\Itc\Adapters\AdapterInterface;
-use Philcross\Itc\Repositories\ServicesRepository;
+use Philcross\ItcCompliance\Models\Product;
+use Philcross\ItcCompliance\Models\ProductOverview;
+use Philcross\ItcCompliance\Adapters\AdapterInterface;
+use Philcross\ItcCompliance\Repositories\ServicesRepository;
 
 class ServicesRepositoryTest extends TestCase
 {

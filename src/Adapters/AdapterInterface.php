@@ -1,9 +1,9 @@
 <?php
 
-namespace Philcross\Itc\Adapters;
+namespace Philcross\ItcCompliance\Adapters;
 
-use Philcross\Itc\Models\Product;
-use Philcross\Itc\Models\ProductOverview;
+use Philcross\ItcCompliance\Models\Product;
+use Philcross\ItcCompliance\Models\ProductOverview;
 
 interface AdapterInterface
 {

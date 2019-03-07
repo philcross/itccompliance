@@ -1,9 +1,9 @@
 <?php
 
-namespace Philcross\Itc\Tests\Models;
+namespace Philcross\ItcCompliance\Tests\Models;
 
 use PHPUnit\Framework\TestCase;
-use Philcross\Itc\Models\ProductOverview;
+use Philcross\ItcCompliance\Models\ProductOverview;
 
 class ProductOverviewTest extends TestCase
 {

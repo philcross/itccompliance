@@ -1,5 +1,5 @@
 {
-    "name": "philcross/itc-test",
+    "name": "philcross/itc-compliance-test",
     "type": "project",
     "require": {
         "php": "7.1.0",
@@ -11,12 +11,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Philcross\\Itc\\": "src/"
+            "Philcross\\ItcCompliance\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Philcross\\Itc\\Tests\\": "tests/"
+            "Philcross\\ItcCompliance\\Tests\\": "tests/"
         }
     },
     "authors": [

@@ -1,9 +1,9 @@
 <?php
 
-namespace Philcross\Itc\Tests\Adapters;
+namespace Philcross\ItcCompliance\Tests\Adapters;
 
-use Philcross\Itc\Adapters\MemoryAdapter;
-use Philcross\Itc\Adapters\AdapterInterface;
+use Philcross\ItcCompliance\Adapters\MemoryAdapter;
+use Philcross\ItcCompliance\Adapters\AdapterInterface;
 
 class MemoryAdapterTest extends AbstractAdapterTest
 {

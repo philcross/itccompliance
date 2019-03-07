@@ -1,6 +1,6 @@
 <?php
 
-namespace Philcross\Itc\Transformers;
+namespace Philcross\ItcCompliance\Transformers;
 
 abstract class AbstractTransformer
 {

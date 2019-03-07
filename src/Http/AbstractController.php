@@ -1,6 +1,6 @@
 <?php
 
-namespace Philcross\Itc\Http;
+namespace Philcross\ItcCompliance\Http;
 
 use Psr\Http\Message\ResponseInterface;
 

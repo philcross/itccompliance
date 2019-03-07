@@ -1,9 +1,9 @@
 <?php
 
-namespace Philcross\Itc\Tests\Http;
+namespace Philcross\ItcCompliance\Tests\Http;
 
 use PHPUnit\Framework\TestCase;
-use Philcross\Itc\Http\ResponseFactory;
+use Philcross\ItcCompliance\Http\ResponseFactory;
 use Psr\Http\Message\ResponseInterface;
 
 class ResponseFactoryTest extends TestCase

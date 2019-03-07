@@ -1,12 +1,12 @@
 <?php
 
-namespace Philcross\Itc\Http;
+namespace Philcross\ItcCompliance\Http;
 
 use GuzzleHttp\Client;
-use Philcross\Itc\Sdk\Sdk;
-use Philcross\Itc\Adapters\SdkAdapter;
-use Philcross\Itc\Repositories\ServicesRepository;
-use Philcross\Itc\Transformers\ProductCollectionTransformer;
+use Philcross\ItcCompliance\Sdk\Sdk;
+use Philcross\ItcCompliance\Adapters\SdkAdapter;
+use Philcross\ItcCompliance\Repositories\ServicesRepository;
+use Philcross\ItcCompliance\Transformers\ProductCollectionTransformer;
 
 class AjaxController extends AbstractController
 {

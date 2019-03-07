@@ -1,6 +1,6 @@
 <?php
 
-use Philcross\Itc\Http\AjaxController;
+use Philcross\ItcCompliance\Http\AjaxController;
 
 include __DIR__ . '/vendor/autoload.php';
 

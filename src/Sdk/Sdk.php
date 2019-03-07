@@ -1,6 +1,6 @@
 <?php
 
-namespace Philcross\Itc\Sdk;
+namespace Philcross\ItcCompliance\Sdk;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;

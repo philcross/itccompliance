@@ -1,8 +1,8 @@
 <?php
 
-namespace Philcross\Itc\Models;
+namespace Philcross\ItcCompliance\Models;
 
-use Philcross\Itc\Traits\SanitizesValues;
+use Philcross\ItcCompliance\Traits\SanitizesValues;
 
 class ProductOverview
 {

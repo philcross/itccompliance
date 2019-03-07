@@ -1,11 +1,11 @@
 <?php
 
-namespace Philcross\Itc\Tests\Transformers;
+namespace Philcross\ItcCompliance\Tests\Transformers;
 
 use PHPUnit\Framework\TestCase;
-use Philcross\Itc\Models\Product;
-use Philcross\Itc\Transformers\ProductTransformer;
-use Philcross\Itc\Transformers\ProductCollectionTransformer;
+use Philcross\ItcCompliance\Models\Product;
+use Philcross\ItcCompliance\Transformers\ProductTransformer;
+use Philcross\ItcCompliance\Transformers\ProductCollectionTransformer;
 
 class ProductTransformerTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Philcross\Itc\Sdk;
+namespace Philcross\ItcCompliance\Sdk;
 
 class ClientException extends SdkException
 {

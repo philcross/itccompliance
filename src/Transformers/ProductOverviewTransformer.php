@@ -1,8 +1,8 @@
 <?php
 
-namespace Philcross\Itc\Transformers;
+namespace Philcross\ItcCompliance\Transformers;
 
-use Philcross\Itc\Models\ProductOverview;
+use Philcross\ItcCompliance\Models\ProductOverview;
 
 class ProductOverviewTransformer extends AbstractTransformer
 {

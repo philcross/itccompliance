@@ -1,11 +1,11 @@
 <?php
 
-namespace Philcross\Itc\Repositories;
+namespace Philcross\ItcCompliance\Repositories;
 
-use Philcross\Itc\Models\Product;
-use Philcross\Itc\Sdk\SdkException;
-use Philcross\Itc\Models\ProductOverview;
-use Philcross\Itc\Adapters\AdapterInterface;
+use Philcross\ItcCompliance\Models\Product;
+use Philcross\ItcCompliance\Sdk\SdkException;
+use Philcross\ItcCompliance\Models\ProductOverview;
+use Philcross\ItcCompliance\Adapters\AdapterInterface;
 
 class ServicesRepository
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Philcross\Itc\Http\EntryController;
+use Philcross\ItcCompliance\Http\EntryController;
 
 include __DIR__ . '/vendor/autoload.php';
 

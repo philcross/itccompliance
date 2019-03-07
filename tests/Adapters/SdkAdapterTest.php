@@ -1,11 +1,11 @@
 <?php
 
-namespace Philcross\Itc\Tests\Adapters;
+namespace Philcross\ItcCompliance\Tests\Adapters;
 
-use Philcross\Itc\Sdk\Sdk;
-use Philcross\Itc\Sdk\Products;
-use Philcross\Itc\Adapters\SdkAdapter;
-use Philcross\Itc\Adapters\AdapterInterface;
+use Philcross\ItcCompliance\Sdk\Sdk;
+use Philcross\ItcCompliance\Sdk\Products;
+use Philcross\ItcCompliance\Adapters\SdkAdapter;
+use Philcross\ItcCompliance\Adapters\AdapterInterface;
 
 class SdkAdapterTest extends AbstractAdapterTest
 {
